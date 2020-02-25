@@ -22,10 +22,11 @@ abstract class MartianDataBase : RoomDatabase() {
 
         }
 
-        private fun buildDataBase(context: Context) = Room.databaseBuilder(
-            context.applicationContext, MartianDataBase::class.java, "martiandatabase"
+        private fun buildDataBase(context: Context) = Room.databaseBuilder(\
+            context.applicationContext,
+            MartianDataBase::class.java,
+            "martiandatabase"
         ).build()
     }
-
 
 }
