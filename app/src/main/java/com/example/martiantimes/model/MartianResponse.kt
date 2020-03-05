@@ -15,7 +15,7 @@ data class MartianResponse(
 
     @ColumnInfo(name = "images")
     @SerializedName("images")
-    val images: List<Image?>?,
+    val image: List<Image?>,
 
     @ColumnInfo(name = "body")
     @SerializedName("body")
@@ -24,6 +24,16 @@ data class MartianResponse(
 ) {
     @PrimaryKey(autoGenerate = true)
     var uuid: Int = 0
+
+    //@Columninfo on this
+    val imageUrl :String? get() {
+        var url = image.firstOrNull { it?.topImage == true }
+         return url?.url ?: " "
+    }
+    //@Columninfo
+    val imageList : List<String?> get() = image.mapNotNull { it?.url }
+
+
 }
 
 data class Image(
