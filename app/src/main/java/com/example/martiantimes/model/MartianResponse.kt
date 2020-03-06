@@ -25,14 +25,13 @@ data class MartianResponse(
     @PrimaryKey(autoGenerate = true)
     var uuid: Int = 0
 
-    //@Columninfo on this
+    //@ColumnInfo("images")
     val imageUrl :String? get() {
         var url = image.firstOrNull { it?.topImage == true }
          return url?.url ?: " "
     }
-    //@Columninfo
+   // @ColumnInfo
     val imageList : List<String?> get() = image.mapNotNull { it?.url }
-
 
 }
 
