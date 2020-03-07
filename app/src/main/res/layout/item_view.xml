@@ -9,9 +9,9 @@
             name="artical"
             type="com.example.martiantimes.model.MartianResponse" />
 
-        <variable
-            name="clickListener"
-            type="com.example.martiantimes.view.ClickListener" />
+<!--        <variable-->
+<!--            name="clickListener"-->
+<!--            type="com.example.martiantimes.view.ClickListener" />-->
 
 
     </data>
@@ -31,22 +31,22 @@
             android:padding="0dp">
 
 
-            <TextView
-                android:id="@+id/articleId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@{String.valueOf(artical.uuid)}"
-                android:visibility="gone"
-                app:layout_constraintEnd_toStartOf="@+id/martian_image"
-                app:layout_constraintStart_toStartOf="@+id/martian_image"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <TextView-->
+<!--                android:id="@+id/articleId"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:text="@{String.valueOf(artical.uuid)}"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/martian_image"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/martian_image"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
             <ImageView
                 android:id="@+id/martian_image"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:imageUrl="@{artical.url}"
+                android:imageUrl="@{artical.image}"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"

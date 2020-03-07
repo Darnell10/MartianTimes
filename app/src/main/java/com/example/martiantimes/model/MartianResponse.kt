@@ -1,37 +1,42 @@
 package com.example.martiantimes.model
 
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 import com.google.gson.annotations.SerializedName
+import java.lang.reflect.Array.get
 
 @Entity
 data class MartianResponse(
 
-    @ColumnInfo(name = "title")
+    //@ColumnInfo(name = "title")
     @SerializedName("title")
     val title: String?,
 
-    @ColumnInfo(name = "images")
+    //@ColumnInfo(name = "images")
     @SerializedName("images")
     val image: List<Image?>,
 
-    @ColumnInfo(name = "body")
+    //@ColumnInfo(name = "body")
     @SerializedName("body")
     val body: String?
 
-) {
+)
+{
     @PrimaryKey(autoGenerate = true)
     var uuid: Int = 0
 
-    //@ColumnInfo("images")
-    val imageUrl :String? get() {
-        var url = image.firstOrNull { it?.topImage == true }
-         return url?.url ?: " "
+    val imageUrl: String?
+        get() {
+            var url = image.firstOrNull { it?.topImage == true }
+            return url?.url ?: " "
+        }
+
+    val imageList: List<String?> get() = image.mapNotNull { it?.url }
+
+    fun imageToString(image: List<Image?>): String {
+        val url = image.firstOrNull { it?.topImage == true }
+        return url?.url ?: " "
     }
-   // @ColumnInfo
-    val imageList : List<String?> get() = image.mapNotNull { it?.url }
 
 }
 
@@ -45,3 +50,25 @@ data class Image(
     @SerializedName("height")
     val height: Int?
 )
+
+class ConverterClass() {
+
+    @TypeConverter
+    fun imageToString(image: List<Image?>): String {
+        val url = image.firstOrNull { it?.topImage == true }
+        return url?.url ?: " "
+    }
+
+
+//     @TypeConverter
+//     fun imageToList (image: List<String?>){
+//
+//     }
+
+//    val imageList : List<String>?
+//        get() {
+//        val image : List<Image>? = null
+//        return image?.mapNotNull { it?.url }
+}
+
+

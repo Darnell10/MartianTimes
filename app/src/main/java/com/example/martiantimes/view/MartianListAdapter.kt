@@ -12,7 +12,7 @@ import com.example.martiantimes.model.MartianResponse
 import kotlinx.android.synthetic.main.item_view.view.*
 
 class MartianListAdapter(val martianList: ArrayList<MartianResponse>) :
-    RecyclerView.Adapter<MartianListAdapter.MartianViewHolder>(), ClickListener {
+    RecyclerView.Adapter<MartianListAdapter.MartianViewHolder>() {
 
     fun updateMartianList(newMartianList: List<MartianResponse>) {
         martianList.clear()
@@ -29,19 +29,19 @@ class MartianListAdapter(val martianList: ArrayList<MartianResponse>) :
 
     override fun onBindViewHolder(holder: MartianViewHolder, position: Int) {
             holder.view.artical = martianList[position]
-            holder.view.clickListener = this
+//            holder.view.clickListener = this
     }
 
     override fun getItemCount(): Int {
         return martianList.size
     }
 
-    override fun onClick(v: View) {
-        val uuid = v.articleId.text.toString().toInt()
-
-
-
-    }
+//    override fun onClick(v: View) {
+//        val uuid = v.articleId.text.toString().toInt()
+//
+//
+//
+//    }
 
     class MartianViewHolder(var view: ItemViewBinding) : RecyclerView.ViewHolder(view.root)
 
