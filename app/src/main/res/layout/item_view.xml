@@ -27,7 +27,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#ffffff"
-            android:onClick="@{clickListener.onClick()}"
             android:padding="0dp">
 
 
@@ -36,7 +35,6 @@
                 android:id="@+id/martian_image"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:imageUrl="@{artical.image}"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"

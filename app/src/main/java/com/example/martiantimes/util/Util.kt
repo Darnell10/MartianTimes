@@ -1,6 +1,8 @@
 package com.example.martiantimes.util
 
 import android.content.Context
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 
 
@@ -12,5 +14,7 @@ fun getProgressDrawable(context: Context): CircularProgressDrawable {
     }
 
 }
+
+
 
 

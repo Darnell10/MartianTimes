@@ -27,7 +27,7 @@
             app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:imageUrl = "@{artical.image}"
+
             />
 
         <TextView
@@ -41,7 +41,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detail_image" />
+            app:layout_constraintTop_toBottomOf="@+id/detail_image"
+            android:gravity="center_horizontal" />
 
 
 

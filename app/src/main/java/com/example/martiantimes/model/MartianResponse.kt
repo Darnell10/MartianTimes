@@ -1,11 +1,9 @@
 package com.example.martiantimes.model
 
-
-import androidx.room.*
 import com.google.gson.annotations.SerializedName
 
 
-@Entity
+
 data class MartianResponse(
 
     @SerializedName("title")
@@ -46,13 +44,13 @@ data class Image(
     val height: Int?
 )
 
-class ConverterClass() {
-
-    @TypeConverter
-    fun imageToString(image: List<Image?>): String {
-        val url = image.firstOrNull { it?.topImage == true }
-        return url?.url ?: " "
-    }
+//class ConverterClass() {
+//
+//    @TypeConverter
+//    fun imageToString(image: List<Image?>): String {
+//        val url = image.firstOrNull { it?.topImage == true }
+//        return url?.url ?: " "
+//    }
 
 
 //     @TypeConverter
@@ -64,6 +62,6 @@ class ConverterClass() {
 //        get() {
 //        val image : List<Image>? = null
 //        return image?.mapNotNull { it?.url }
-}
+//}
 
 
