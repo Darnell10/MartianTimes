@@ -3,27 +3,22 @@ package com.example.martiantimes.model
 
 import androidx.room.*
 import com.google.gson.annotations.SerializedName
-import java.lang.reflect.Array.get
+
 
 @Entity
 data class MartianResponse(
 
-    //@ColumnInfo(name = "title")
     @SerializedName("title")
     val title: String?,
 
-    //@ColumnInfo(name = "images")
     @SerializedName("images")
     val image: List<Image?>,
 
-    //@ColumnInfo(name = "body")
     @SerializedName("body")
     val body: String?
 
 )
 {
-    @PrimaryKey(autoGenerate = true)
-    var uuid: Int = 0
 
     val imageUrl: String?
         get() {
