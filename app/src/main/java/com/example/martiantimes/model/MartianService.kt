@@ -14,7 +14,7 @@ class MartianService {
         .build()
         .create(MartianApi::class.java)
 
-    fun getArticles(): Deferred<List<MartianResponse>> {
+    suspend fun getArticles(): List<MartianResponse> {
         return retrofit.getArticles()
     }
 

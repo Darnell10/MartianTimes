@@ -11,7 +11,7 @@ import retrofit2.http.GET
 interface MartianApi {
 
     @GET("ios-newsreader/candidates/test/articles.json")
-    fun getArticles(): Deferred<List<MartianResponse>>
+    suspend fun getArticles(): List<MartianResponse>
 
 
 }
