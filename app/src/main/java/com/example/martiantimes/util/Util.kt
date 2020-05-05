@@ -16,8 +16,8 @@ fun getProgressDrawable(context: Context): CircularProgressDrawable {
 }
 
 fun ImageView.loadImage(url: String?, progressDrawable: CircularProgressDrawable) {
-    val image : DownloadImageTask = DownloadImageTask()
-
+    val image: DownloadImageTask = DownloadImageTask()
+        
 }
 
 

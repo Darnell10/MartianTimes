@@ -4,13 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.ListFragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.martiantimes.R
 import com.example.martiantimes.databinding.ItemViewBinding
 import com.example.martiantimes.model.MartianResponse
 import com.example.martiantimes.util.ClickListener
-import kotlinx.android.synthetic.main.item_view.view.*
 
 class MartianListAdapter(val martianList: ArrayList<MartianResponse>) :
     RecyclerView.Adapter<MartianListAdapter.MartianViewHolder>(), ClickListener {
@@ -40,8 +39,12 @@ class MartianListAdapter(val martianList: ArrayList<MartianResponse>) :
     }
 
     override fun onClick(view: View) {
-        for (martian: MartianResponse in martianList){
-            if (view.tag == martian.title){
+        for (martian: MartianResponse in martianList) {
+            if (view.tag == martian.title) {
+                val action =
+                    ArticleListFragmentDirections
+                        .actionArticleListFragmentToDetailArticleFragment(martian)
+                Navigation.findNavController(view).navigate(action)
 
 
             }
